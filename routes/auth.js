@@ -5,10 +5,8 @@ router.post("/login",async(req,res)=>{
       const user = await User.findOne({email:req.body.email});
       !user && res.status(400).json({message:"User not found",status:false});
       const validatePassword = req.body.password == user.password
-      !validatePassword && res.status(400).json({message:"wrong password",status:false});
-     
+      !validatePassword && res.status(400).json({message:"wrong password",status:false}); 
       res.status(200).json(user);
-
     }catch(e){
         res.status(500).json(e);
     }

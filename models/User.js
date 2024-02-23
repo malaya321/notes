@@ -18,6 +18,7 @@ const User = new mongoose.Schema({
         max:30,
         unique:true,
         required:true 
-    }
+    },
+  
 },{timestamps:true});
 module.exports = mongoose.model("user",User)

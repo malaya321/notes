@@ -14,17 +14,17 @@ const Notes = new mongoose.Schema(
       unique: true,
       required: true,
     },
-    // postedBy:{
-    //     type:String,
-    //     min:5,
-    //     max:30,
-    //     required:true
-    // }
-    postedBy: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Notes",
-      required: true,
+    postedBy:{
+        type:String,
+        min:5,
+        max:30,
+        required:true
     }
+    // postedBy: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "Notes",
+    //   required: true,
+    // }
   },
   { timestamps: true }
 );
