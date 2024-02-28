@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const helmet = require('helmet');
 const authRouter = require('./routes/auth');
 const notesRouter = require('./routes/notes');
+const productRouter = require('./routes/product')
 
 const app = express();
 dotenv.config();
@@ -26,6 +27,7 @@ mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopol
 // Routes
 app.use("/api/auth", authRouter);
 app.use("/api/notes", notesRouter);
+app.use("/api/products", productRouter);
 
 app.get("/notes", (req, res) => {
     res.send("Notes fetched successfully");

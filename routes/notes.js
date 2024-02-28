@@ -70,7 +70,7 @@ router.get("/getNote/:userId", async (req, res) => {
         const notes = await Note.find({ postedBy: req.params.userId });
         res.status(200).json(notes);
     } catch (e) {
-        console.error(e); // Log the error for debugging
+        console.error(e); 
         res.status(500).json({ message: "Internal Server Error" });
     }
 });
